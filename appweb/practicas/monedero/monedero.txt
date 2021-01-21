@@ -1,0 +1,8 @@
+0~Compras supermercado~1401746401~-100.20
+1~Nómina curro~1370210401~1000.99
+2~Regalo cumpleaños Alicia~1362697201~-199.66
+3~Pala de pádel~1362697201~-130
+4~Pelotas~1484706661~2.00
+5~Raqueta~1456786800~2.00
+6~Cena de domingo~1454198461~-90
+7~Camiseta ~1607040061~20
