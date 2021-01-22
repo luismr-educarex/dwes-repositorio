@@ -18,7 +18,7 @@ class paciente{
         try {
            
             // preparar y vincular parámetros
-            $stmt = $this->conexion->prepare("INSERT INTO Pacientes (nombre, direccion ) VALUES (:nombre, :direccion)");
+            $stmt = $this->conexion->prepare("INSERT INTO Pacientes (nombre, direccion,estado ) VALUES (:nombre, :direccion)");
              $stmt->bindParam(':nombre', $nombre_paciente);
              $stmt->bindParam(':direccion', $direccion_paciente);
          
@@ -77,10 +77,6 @@ function borrar_paciente($id){
     
 }
 
-
-
-
-   
 
 }
 
