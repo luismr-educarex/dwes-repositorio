@@ -40,37 +40,22 @@ class paciente{
         } 
     }
 
-function listar_pacientes(){
+        function listar_pacientes(){
 
 
-    $id_fichero = fopen($this->nombre_fichero,"r")
-        or die("El fichero".$this->nombre_fichero."no se ha podido abrir"."</br>");
+            $listaPacientes=null;
+            try {
+                
+                $stmt = $this->conexion->prepare("SELECT id, nombre, direccion FROM Pacientes");		
+                $stmt->execute();
 
-    rewind($id_fichero);
+            } catch(PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            }
 
-    $this->numero_pacientes = 0;
+            return $stmt;
 
-    $pacientes = array();
-
-    while (!feof($id_fichero))
-    {
-        // Obtenemos el contenido de la línea actual y nos movemos a la siguiente
-        $paciente_str = trim(fgets($id_fichero));
-        // Si la cadena leida <> vacío
-        if ($paciente_str!=""){
-            // Usamos explode para separar los datos de la cadena en una matriz y esta 
-            // matriz la añadimos con array_push a la matriz $pacientes
-            array_push($pacientes, explode("#", $paciente_str));
-            // Incrementamos el nº de pacientes
-            $this->numero_pacientes++;
         }
-    } // end while
-    
-    fclose($id_fichero);
-
-    return $pacientes;
-
-}
 
 function modificar_paciente($id,$nombre,$direccion){
 

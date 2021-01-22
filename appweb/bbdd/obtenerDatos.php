@@ -50,7 +50,7 @@ function obtenerDatos2(){
             foreach($stmt as $row){
                 echo "paciente:".$row['id'] . " " .$row['nombre'] . " " . $row['direccion'] ;
                 echo "<br/>";
-               }
+              }
 
 
         } catch(PDOException $e) {
