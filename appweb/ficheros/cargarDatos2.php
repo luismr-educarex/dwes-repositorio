@@ -25,10 +25,12 @@ if(isset($_POST["fichero"]))
 
 
 //opción A
-$dirpath = realpath(dirname(getcwd()));
-$directorio = $dirpath."/ficheros/subidas/";
+//$dirpath = realpath(dirname(getcwd()));
+$dirpath = dirname(__FILE__);
+//$directorio = $dirpath."/ficheros/subidas/";
+$directorio = $dirpath."/subidas/";
 $ruta_fichero = $directorio . basename($_FILES["fichero"]["name"]);
-
+echo $ruta_fichero;
 //opción B
 //$directorio = "/appweb/ficheros/subidas/";
 //$ruta_fichero = $_SERVER['DOCUMENT_ROOT'].$directorio . basename($_FILES["fichero"]["name"]);
